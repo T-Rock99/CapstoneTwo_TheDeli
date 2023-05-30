@@ -1,6 +1,4 @@
-package com.at;
-
-import java.util.*;
+package com.sbat;
 
 public class Sandwich{
     private char size;

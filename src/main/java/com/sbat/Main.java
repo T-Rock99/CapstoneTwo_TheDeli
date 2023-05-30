@@ -1,7 +1,4 @@
-package com.at;
-
-import java.util.*;
-import java.io.*;
+package com.sbat;
 
 public class Main {
     public static void main(String[] args) {

@@ -7,7 +7,7 @@ public class Main {
         Topping t = new Topping();
         Sandwich s = new Sandwich();
         s.sizePreference();
-        t.calcPrice(s.getSize());
+        t.calcPrice(s.getSize());12321
 
         System.out.println(t.price);
 

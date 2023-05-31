@@ -53,7 +53,6 @@ public class Topping extends Sandwich {
         float price;
         Scanner userInput = new Scanner(System.in);
         System.out.println("How many servings of meat would you like?");
-        userInput = userInput.nextInt();
 
         if (size.equals("S")) {
             price = 5.5f;
@@ -63,7 +62,7 @@ public class Topping extends Sandwich {
             if (extraCheese = true){
                 price += 0.75f;
             }
-            for(int i=0;i<userInput;i++){
+            for(int i=0;i<userInput.nextInt();i++){
 
             }
         }

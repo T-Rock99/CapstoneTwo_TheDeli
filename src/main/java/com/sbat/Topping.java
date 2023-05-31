@@ -9,7 +9,7 @@ public class Topping extends Sandwich {
     private ArrayList<String> Sauces = new ArrayList();
     private ArrayList<String> Regular = new ArrayList();
     private ArrayList<String> Cheese = new ArrayList();
-    private static float price;
+    protected float price;
     private boolean extraMeat;
     private boolean extraCheese;
 
@@ -53,51 +53,52 @@ public class Topping extends Sandwich {
         float price = 0f;
         Scanner userInput = new Scanner(System.in);
 
+        System.out.println("How many servings of meat would you like?");
+        int meatServings = userInput.nextInt();
+        System.out.println("How many servings of cheese would you like?");
+        int cheeseServings = userInput.nextInt();
+
 
         if (size.equals("S")) {
-            System.out.println("How many servings of meat would you like?");
-            int meatServings = userInput.nextInt();
-            System.out.println("How many servings of cheese would you like?");
-            int cheeseServings = userInput.nextInt();
-            for(int i=0;i<meatServings;i++){
+            for (int i = 0; i < meatServings; i++) {
                 price += 1f;
             }
-            if (extraMeat){
-                price += 0.5f;
-            }
-            if (extraCheese){
+            for (int i = 0; i < cheeseServings; i++) {
                 price += 0.75f;
             }
-
-//            System.out.println("Would you like extra meat?");
-        }
-
-        else if (size.equals("M")) {
-            int servings = meatInput.nextInt();
-            price = 7f;
-            if (extraMeat = true){
-                price += 1f;
+            if (extraMeat) {
+                price += 0.5f;
             }
-            if (extraCheese = true){
-                price += 1.5f;
+            if (extraCheese) {
+                price += 0.3f;
             }
-            for(int i=0;i<servings;i++){
+
+        } else if (size.equals("M")) {
+            for (int i = 0; i < meatServings; i++) {
                 price += 2f;
             }
-        }
-
-        else if (size.equals("L")) {
-            price = 8.5f;
-            if (extraMeat = true){
+            for (int i = 0; i < cheeseServings; i++) {
                 price += 1.5f;
             }
-            if (extraCheese = true){
-                price += 2.25f;
+            if (extraMeat) {
+                price += 1f;
             }
-            for(int i=0;i<meatInput.nextInt();i++){
+            if (extraCheese) {
+                price += 0.6f;
+            }
+        } else if (size.equals("L")) {
+            for (int i = 0; i < meatServings; i++) {
                 price += 3f;
             }
-
+            for (int i = 0; i < cheeseServings; i++) {
+                price += 2.25f;
+            }
+                if (extraMeat = true) {
+                    price += 1.5f;
+                }
+                if (extraCheese = true) {
+                    price += 0.9f;
+            }
         }
         return price;
     }

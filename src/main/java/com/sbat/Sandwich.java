@@ -35,14 +35,11 @@ class Sandwich {
                 "\nS = Small(4 inch)\nM = Medium(8 inch)\nL = Large (12 inch)");
 
         size = userInput.next();
-
-        // Set the price based on the selected size
-        this.price = calcPrice(size);
     }
 
 
     protected float calcPrice(String size) {
-        return 0;
+        return price;
     }
 }
 

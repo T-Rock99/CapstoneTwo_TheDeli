@@ -1,34 +1,48 @@
 package com.sbat;
+import java.util.*;
 
-public class Sandwich{
-    private char size;
+class Sandwich {
+    private String size;
     private float price;
-    public static void sandwichBuild(){
-
-    }
 
     public Sandwich() {
     }
 
-    public Sandwich(char size, float price) {
+    public Sandwich(String size) {
+        this.size = size;
+    }
+
+    public Sandwich(String size, float price) {
         this.size = size;
         this.price = price;
-    }
-
-    public char getSize() {
-        return size;
-    }
-
-    public void setSize(char size) {
-        this.size = size;
     }
 
     public float getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void sizePreference() {
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("What size would you like your sandwich to be?" +
+                "\nS = Small(4 inch)\nM = Medium(8 inch)\nL = Large (12 inch)");
+
+        size = userInput.next();
+
+        // Set the price based on the selected size
+        this.price = calcPrice(size);
+    }
+
+
+    protected float calcPrice(String size) {
+        return 0;
     }
 }
 

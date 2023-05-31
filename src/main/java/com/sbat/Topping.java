@@ -48,9 +48,8 @@ public class Topping extends Sandwich {
         return null;
     }
 
-    @Override
+//    @Override
     protected float calcPrice(String size) {
-        float price = 0f;
         Scanner userInput = new Scanner(System.in);
 
         System.out.println("How many servings of meat would you like?");
@@ -58,6 +57,30 @@ public class Topping extends Sandwich {
         System.out.println("How many servings of cheese would you like?");
         int cheeseServings = userInput.nextInt();
 
+        System.out.println("Would you like extra meat?");
+
+        String extraMeatRequest = userInput.next();
+        if (extraMeatRequest.equalsIgnoreCase("Yes")){
+            extraMeat = true;
+        } else if (extraMeatRequest.equalsIgnoreCase("Y")){
+            extraMeat = true;
+        } else if (extraMeatRequest.equalsIgnoreCase("No")){
+            extraMeat = false;
+        } else if (extraMeatRequest.equalsIgnoreCase("N")){
+            extraMeat = false;
+        }
+
+        System.out.println("Would you like extra cheese?");
+        String extraCheeseRequest = userInput.next();
+        if (extraCheeseRequest.equalsIgnoreCase("Yes")){
+            extraCheese = true;
+        } else if (extraCheeseRequest.equalsIgnoreCase("Y")){
+            extraCheese = true;
+        } else if (extraCheeseRequest.equalsIgnoreCase("No")){
+            extraCheese = false;
+        } else if (extraCheeseRequest.equalsIgnoreCase("N")){
+            extraCheese = false;
+        }
 
         if (size.equals("S")) {
             for (int i = 0; i < meatServings; i++) {
@@ -93,13 +116,14 @@ public class Topping extends Sandwich {
             for (int i = 0; i < cheeseServings; i++) {
                 price += 2.25f;
             }
-                if (extraMeat = true) {
+                if (extraMeat) {
                     price += 1.5f;
                 }
-                if (extraCheese = true) {
+                if (extraCheese) {
                     price += 0.9f;
             }
         }
+        super.setPrice(price);
         return price;
     }
 }

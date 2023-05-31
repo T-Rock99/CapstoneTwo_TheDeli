@@ -50,30 +50,39 @@ public class Topping extends Sandwich {
 
     @Override
     protected float calcPrice(String size) {
-        float price;
+        float price = 0f;
         Scanner userInput = new Scanner(System.in);
-        System.out.println("How many servings of meat would you like?");
+
 
         if (size.equals("S")) {
-            price = 5.5f;
-            if (extraMeat = true){
+            System.out.println("How many servings of meat would you like?");
+            int meatServings = userInput.nextInt();
+            System.out.println("How many servings of cheese would you like?");
+            int cheeseServings = userInput.nextInt();
+            for(int i=0;i<meatServings;i++){
+                price += 1f;
+            }
+            if (extraMeat){
                 price += 0.5f;
             }
-            if (extraCheese = true){
+            if (extraCheese){
                 price += 0.75f;
             }
-            for(int i=0;i<userInput.nextInt();i++){
 
-            }
+//            System.out.println("Would you like extra meat?");
         }
 
         else if (size.equals("M")) {
+            int servings = meatInput.nextInt();
             price = 7f;
             if (extraMeat = true){
                 price += 1f;
             }
             if (extraCheese = true){
                 price += 1.5f;
+            }
+            for(int i=0;i<servings;i++){
+                price += 2f;
             }
         }
 
@@ -85,6 +94,10 @@ public class Topping extends Sandwich {
             if (extraCheese = true){
                 price += 2.25f;
             }
+            for(int i=0;i<meatInput.nextInt();i++){
+                price += 3f;
+            }
+
         }
         return price;
     }

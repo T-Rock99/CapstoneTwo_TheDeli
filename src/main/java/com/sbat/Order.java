@@ -1,28 +1,26 @@
 package com.sbat;
 
-public class Order{ // highest parent class
-    private float price;
-    private int orderNumber;
+import java.util.ArrayList;
 
-    public Order(float price, int orderNumber) {
+public class Order{
+    private float price;
+
+    public Order(){}
+
+    public Order(float price) {
         this.price = price;
-        this.orderNumber = orderNumber;
     }
 
-    public float getPrice() {
+    public float getPriceD() {
+        Sandwich s = new Sandwich();
+        Drinks d = new Drinks();
+        Chips c = new Chips();
+
+        price = s.addSandwich() + d.addDrink() + c.chipsMenu();
         return price;
     }
 
-    public int getOrderNumber() {
-        return orderNumber;
+    public String showReceipt(){
     }
-
-    public void setOrderNumber(int orderNumber) {
-        this.orderNumber = orderNumber;
-    }
-    public static void addSandwich(){
-
-    }
-
 }
 

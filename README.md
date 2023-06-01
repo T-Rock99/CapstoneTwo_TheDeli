@@ -20,4 +20,12 @@ Add multiple toppings to your sandwich, such as lettuce, tomatoes, onions, and m
 View the complete order details (including price), including the chosen bread, chips, drink, and toppings.
 
 # Screenshots:
+![Screen Shot 2023-06-01 at 3 02 49 PM](https://github.com/T-Rock99/CapstoneTwo_TheDeli/assets/129996035/7b4cdbde-bbd7-44db-9668-7103a7cd9bfb)
 
+![Screen Shot 2023-06-01 at 3 03 18 PM](https://github.com/T-Rock99/CapstoneTwo_TheDeli/assets/129996035/7ec1769f-1798-47bc-9c77-c2fc89652a79)
+
+![Screen Shot 2023-06-01 at 3 05 06 PM](https://github.com/T-Rock99/CapstoneTwo_TheDeli/assets/129996035/e8ba952e-c603-4726-a397-e3c0bddac669)
+
+![Screen Shot 2023-06-01 at 3 05 32 PM](https://github.com/T-Rock99/CapstoneTwo_TheDeli/assets/129996035/11ef4688-e6de-47cd-bd1d-b84ccb15f865)
+
+![Screen Shot 2023-06-01 at 3 05 16 PM](https://github.com/T-Rock99/CapstoneTwo_TheDeli/assets/129996035/b0ad4f77-32c7-48bc-944d-16734332630f)

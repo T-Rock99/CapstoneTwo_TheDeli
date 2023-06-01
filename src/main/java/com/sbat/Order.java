@@ -2,32 +2,26 @@ package com.sbat;
 
 import java.util.ArrayList;
 
-public class Order{ // highest parent class
-    ArrayList<Sandwich> sandwich = new ArrayList();
-//    ArrayList<Drink> drink = new ArrayList();
-    ArrayList<Chips> chips = new ArrayList();
+public class Order{
     private float price;
-    private int orderNumber;
 
-    public Order(float price, int orderNumber) {
+    public Order(){}
+
+    public Order(float price) {
         this.price = price;
-        this.orderNumber = orderNumber;
     }
 
-    public float getPrice() {
+    public float getPriceD() {
+        Sandwich s = new Sandwich();
+        Drinks d = new Drinks();
+        Chips c = new Chips();
+
+        price = s.getSandwichPrice() + d.addDrink() + c.chipsMenu();
         return price;
     }
 
-    public int getOrderNumber() {
-        return orderNumber;
-    }
-
-    public void setOrderNumber(int orderNumber) {
-        this.orderNumber = orderNumber;
-    }
-    public static void addSandwich(){
+    public String showReceipt(){
 
     }
-
 }
 

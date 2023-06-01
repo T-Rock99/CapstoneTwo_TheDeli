@@ -12,6 +12,11 @@ public class Topping extends Sandwich {
     protected float price;
     private boolean extraMeat;
     private boolean extraCheese;
+    public Topping(){}
+
+    public Topping(String size) {
+        super(size);
+    }
 
     public String toppings() {
         Meat.add("Steak");
@@ -123,7 +128,8 @@ public class Topping extends Sandwich {
                     price += 0.9f;
             }
         }
-        super.setPrice(price);
+//        super.getBreadPrice();
+        super.setPrice(price+super.getPrice());
         return price;
     }
 }

@@ -5,6 +5,10 @@ class Sandwich {
     private String size;
     private float price;
 
+    public float getPrice() {
+        return price;
+    }
+
     public Sandwich() {
     }
 
@@ -17,17 +21,30 @@ class Sandwich {
         this.price = price;
     }
 
-//    public float getPrice() {
-//        return price;
-//    }
+    public float getBreadPrice() {
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("What size would you like your sandwich to be?" +
+                "\nS = Small(4 inch)\nM = Medium(8 inch)\nL = Large (12 inch)");
+        String sizeInput = userInput.next();
+        size = sizeInput;
+        return price;
+    }
 
-public float getPrice() {
-        sizePreference();
-        Topping t = new Topping();
-        t.calcPrice(size);
+    public float getSandwichPrice() {
+        getBreadPrice();
+        float toppingPrice = calculateToppingPrice(size);
+        if (size.equals("S")) {
+            price += 5.5f;
+        } else if (size.equals("M")) {
+            price += 7f;
+        } else if (size.equals("L")) {
+            price += 8.5f;
+        }
+        price += toppingPrice;
 
         return price;
     }
+
     public void setPrice(float price) {
         this.price = price;
     }
@@ -40,36 +57,10 @@ public float getPrice() {
         return size;
     }
 
-    public float sizePreference() {
-        Scanner userInput = new Scanner(System.in);
-        System.out.println("What size would you like your sandwich to be?" +
-                "\nS = Small(4 inch)\nM = Medium(8 inch)\nL = Large (12 inch)");
-
-        size = userInput.next();
-        if (size.equals("S")) {
-            price += 5.5f;
-        } else if (size.equals("M")) {
-            price += 7f;
-        } else if (size.equals("L")) {
-            price += 8.5f;
-        }
-        return price;
+    protected float calculateToppingPrice(String size) {
+        Topping t = new Topping();
+        return t.calcPrice(size);
     }
-
-
-//    protected float calcPrice(String size) {
-//        return price;
-//    }
-//    protected float calcPrice(String size) {
-//        if (size.equals("S")) {
-//            price += 5.5f;
-//        } else if (size.equals("M")) {
-//            price += 7f;
-//        } else if (size.equals("L")) {
-//            price += 8.5f;
-//        }
-//        return price;
-//    }
 }
 
 

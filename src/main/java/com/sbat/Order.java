@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Order{ // highest parent class
     ArrayList<Sandwich> sandwich = new ArrayList();
-    ArrayList<Drink> drink = new ArrayList();
+//    ArrayList<Drink> drink = new ArrayList();
     ArrayList<Chips> chips = new ArrayList();
     private float price;
     private int orderNumber;

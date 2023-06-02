@@ -4,6 +4,11 @@ import java.util.*;
 class Sandwich {
     private String size;
     private float price;
+    private float ordersOfSandwich;
+
+    public float getOrdersOfSandwich() {
+        return ordersOfSandwich;
+    }
 
     public float getPrice() {
         return price;
@@ -27,10 +32,13 @@ class Sandwich {
                 "\nS = Small(4 inch)\nM = Medium(8 inch)\nL = Large (12 inch)");
         String sizeInput = userInput.next();
         size = sizeInput;
+        String breadType;
+        System.out.println("What kind of bread would you like? We have:\nWheat\nRye\nWhite\nWrap");
+        breadType = userInput.next();
         return price;
     }
 
-    public float getSandwichPrice() {
+    public void getSandwichPrice() {
         getBreadPrice();
         float toppingPrice = calculateToppingPrice(size);
         if (size.equals("S")) {
@@ -41,7 +49,22 @@ class Sandwich {
             price += 8.5f;
         }
         price += toppingPrice;
+    }
 
+    public float addSandwich(){
+        Scanner userInput = new Scanner(System.in);
+        String input;
+//        int ordersOfSandwich = 0;
+        do{
+            System.out.println("Would you like a sandwich? Type 'Stop' for no.");
+            input = userInput.next();
+
+            if (input.equalsIgnoreCase("Yes")){
+                getSandwichPrice();
+                ordersOfSandwich++;
+            }
+
+        } while(!input.equalsIgnoreCase("Stop"));
         return price;
     }
 

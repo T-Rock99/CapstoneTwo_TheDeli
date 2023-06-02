@@ -16,12 +16,16 @@ public class Order{
         Drinks d = new Drinks();
         Chips c = new Chips();
 
-        price = s.getSandwichPrice() + d.addDrink() + c.chipsMenu();
+        price = s.addSandwich() + d.addDrink() + c.addChips();
         return price;
     }
 
-    public String showReceipt(){
-
+    public float getPrice() {
+        return price;
     }
+
+//    public String showReceipt(){
+//
+//    }
 }
 

@@ -8,10 +8,11 @@ public class Chips {
     private static ArrayList<Chips> chipsList = new ArrayList<>();
     public Chips(){}
 
-    public float chipsMenu(){
+    public float addChips(){
         loadChips();
 
         String input;
+//        int ordersOfChips = 0;
 
         do {
             System.out.println("Would you like chips?");
@@ -26,6 +27,7 @@ public class Chips {
 
             System.out.println("Would you like another order of chips?\nType 'No' to exit, otherwise any input to order more chips.");
             input = scanner.next();
+            ordersOfChips++;
 
             switch (input) {
 //                case "1":
@@ -54,6 +56,11 @@ public class Chips {
     private String name;
     private float price;
     private boolean isSpicy;
+    private float ordersOfChips;
+
+    public float getOrdersOfChips() {
+        return ordersOfChips;
+    }
 
     public Chips(String name, float price, boolean isSpicy) {
         this.name = name;

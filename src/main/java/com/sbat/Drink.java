@@ -30,6 +30,11 @@ class Drinks {
     private String brand;
     private String flavor;
     private float price;
+    private float ordersOfDrinks;
+
+    public float getOrdersOfDrinks() {
+        return ordersOfDrinks;
+    }
 
     public Drinks(String size, boolean ice, String brand, String flavor, float price) {
         this.size = size;
@@ -86,6 +91,7 @@ class Drinks {
 
         String userInput;
         String size;
+//        int ordersOfDrinks = 0;
         do {
             System.out.println("Please enter a command: " + "\nS = Small(S), \nM = Medium(M), \nL = Large (L)");
 
@@ -112,6 +118,7 @@ class Drinks {
 
             System.out.println("\t5: Would you like another drink?");
             userInput = scanner.nextLine();
+            ordersOfDrinks ++;
 
 
 
